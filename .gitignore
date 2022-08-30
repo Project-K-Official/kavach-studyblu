@@ -1,0 +1,5 @@
+.vscode
+venv
+dist
+xedu.egg-info
+__pycache__
