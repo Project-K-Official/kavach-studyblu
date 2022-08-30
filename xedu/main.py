@@ -1,9 +1,14 @@
+from unicodedata import name
 from PyQt5.Qt import QUrl, QDesktopServices
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QFrame, QStackedWidget, QVBoxLayout, QWidget, QFileDialog, QGridLayout
 from PyQt5 import uic
-from PyQt5.QtGui import QPixmap, QCursor
+from PyQt5.QtGui import QPixmap
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import QCursor
+from PyQt5 import QtWebEngineWidgets
+from PyQt5.QtWebEngineWidgets import QWebEngineSettings
+from PyQt5 import QtWidgets
+from PyQt5.QtCore import Qt
 import json
 import pandas as pd
 import random
@@ -15,9 +20,56 @@ import os
 from PyQt5.QtCore import QUrl
 from PyQt5.QtWebEngineWidgets import QWebEngineView, QWebEnginePage
 
-#*********************************************
+# *********************************************
 #                  FRAME 1
-#*********************************************
+# *********************************************
+
+
+class Course_Player (QMainWindow):
+
+    def __init__(self, *args, **kwargs):
+        super(Course_Player, self).__init__(*args, **kwargs)
+
+        self.setWindowTitle("Course Player")
+        self.setFixedWidth(1920)
+        self.setFixedHeight(1080)
+
+        label = QLabel("")
+
+        # The `Qt` namespace has a lot of attributes to customise
+        # widgets. See: http://doc.qt.io/qt-5/qt.html
+        label.setAlignment(Qt.AlignCenter)
+
+        # Set the central widget of the Window. Widget will expand
+        # to take up all the space in the window by default.
+        self.setCentralWidget(label)
+
+        # Code for 1 Youtube video and its QtWidget
+        # ======================================================================================
+
+        self.centralwid = QtWidgets.QWidget(self)
+        self.centralwid.setGeometry(QtCore.QRect(0, 0, 1920, 1080))
+        self.centralwid.setObjectName("centralwid")
+        self.label_loading_browsers = QtWidgets.QLabel(self.centralwid)
+        # ===================== HERE IS THE CODE FOR IFRAM YOUTUBE ============================
+        self.vlayout = QtWidgets.QVBoxLayout()
+        self.webview = QtWebEngineWidgets.QWebEngineView()
+        self.webview.settings().setAttribute(
+            QWebEngineSettings.FullScreenSupportEnabled, True)
+        self.webview.settings().setAttribute(
+            QWebEngineSettings.LocalContentCanAccessRemoteUrls, True)
+        self.webview.settings().setAttribute(
+            QWebEngineSettings.AllowRunningInsecureContent, True)
+        self.webview.page().fullScreenRequested.connect(lambda request: request.accept())
+        baseUrl = "local"
+        htmlString = """
+                        <iframe width="1900" height="950" src="https://www.youtube.com/embed/g8NVwN0_mks?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                """
+
+        self.webview.setHtml(htmlString, QUrl(baseUrl))
+        self.vlayout.addWidget(self.webview)
+        self.centralwid.setLayout(self.vlayout)
+
 
 class LandingPage(QMainWindow):
     def __init__(self):
@@ -28,6 +80,7 @@ class LandingPage(QMainWindow):
         # button1 -> Get Started
         # button7 -> Exit
         # button8 -> Share
+        # button9 -> Course_1
 
         self.button1 = self.findChild(QPushButton, "pushButton")
         self.button1.clicked.connect(self.gotocp)
@@ -37,6 +90,9 @@ class LandingPage(QMainWindow):
 
         self.button7 = self.findChild(QPushButton, "pushButton_7")
         self.button7.clicked.connect(self.exit)
+
+        self.button9 = self.findChild(QPushButton, "course_no_1")
+        self.button9.clicked.connect(self.goto_course_player)
 
     def share(self):
         url = QUrl("https://www.google.co.in/")
@@ -50,10 +106,16 @@ class LandingPage(QMainWindow):
     def exit(self):
         sys.exit(app.exec())
 
+    def goto_course_player(self):
+        app = QApplication(sys.argv)
+        window = Course_Player()
+        window.show()
+        app.exec_()
 
-#*********************************************
+# *********************************************
 #                  FRAME 2
-#*********************************************
+# *********************************************
+
 
 class CourseInfo(QMainWindow):
     def __init__(self):
@@ -90,13 +152,13 @@ class CourseInfo(QMainWindow):
         screen2 = ReadingPage()
         widget.addWidget(screen2)
         widget.setCurrentIndex(widget.currentIndex()+1)
-        #print(widget.currentIndex()+1)
+        # print(widget.currentIndex()+1)
 
     def back(self):
         screen1 = LandingPage()
         widget.addWidget(screen1)
         widget.setCurrentIndex(widget.currentIndex()+1)
-        #print(widget.currentIndex()+1)
+        # print(widget.currentIndex()+1)
 
     def gotoq(self):
         screen1 = QuizGame()
@@ -112,9 +174,10 @@ class CourseInfo(QMainWindow):
         url = QUrl("https://www.google.co.in/")
         QDesktopServices.openUrl(url)
 
-#*********************************************
+# *********************************************
 #                  FRAME 3
-#*********************************************
+# *********************************************
+
 
 class ReadingPage(QMainWindow):
     def __init__(self):
@@ -126,9 +189,18 @@ class ReadingPage(QMainWindow):
 
         # Course material
         self.text = self.findChild(QLabel, "Para1")
-        with open("./reading/file.txt") as f:
-            __content = f.read()
-            self.text.setText(__content)
+        # with open("./reading/file.txt") as f:
+        #     __content = f.read()
+        #     self.text.setText(__content)
+
+        # HTML Embedding
+        self.htmlView = QtWidgets.QTextBrowser(self)
+        # Replace Label with TextBrowser
+        containing_layout = self.text.parent().layout()
+        containing_layout.replaceWidget(self.text, self.htmlView)
+        # Loading HTML
+        self.htmlView.setSource(
+            QtCore.QUrl.fromLocalFile("./reading/course.html"))
 
     def back(self):
         screen1 = CourseInfo()
@@ -136,9 +208,9 @@ class ReadingPage(QMainWindow):
         widget.setCurrentIndex(widget.currentIndex()+1)
 
 
-#*********************************************
+# *********************************************
 #                  Terminal Game
-#*********************************************
+# *********************************************
 
 class TerminalGame(QMainWindow):
     def __init__(self):
@@ -154,9 +226,10 @@ class TerminalGame(QMainWindow):
         widget.setCurrentIndex(widget.currentIndex()+1)
         print(widget.currentIndex()+1)
 
-#*********************************************
+# *********************************************
 #                  Score Page
-#*********************************************
+# *********************************************
+
 
 class QuizScore(QMainWindow):
     def __init__(self, score):
@@ -173,14 +246,15 @@ class QuizScore(QMainWindow):
         widget.setCurrentIndex(widget.currentIndex()+1)
         print(widget.currentIndex()+1)
 
-#*********************************************
+# *********************************************
 #                  Quiz Game
-#*********************************************
+# *********************************************
+
 
 class QuizGame(QMainWindow):
     def __init__(self):
         super(QuizGame, self).__init__()
-        uic.loadUi("./ui/quiz_game.ui", self)
+        uic.loadUi("/ui/quiz_game.ui", self)
 
         self.button = self.findChild(QPushButton, "pushButton")
         self.button.clicked.connect(self.back)
@@ -197,7 +271,7 @@ class QuizGame(QMainWindow):
             "hint": [],
             "pAnsExp": [],
             "questionNo": []
-            }
+        }
 
         self.clear_parameters()
         self.preload_data(self.parameters["index"][-1])
@@ -212,7 +286,7 @@ class QuizGame(QMainWindow):
         screen1 = CourseInfo()
         widget.addWidget(screen1)
         widget.setCurrentIndex(widget.currentIndex()+1)
-        #print(widget.currentIndex()+1)
+        # print(widget.currentIndex()+1)
 
     def quiz(self):
         # Score
@@ -222,7 +296,7 @@ class QuizGame(QMainWindow):
         # Question
         question = self.parameters["question"][-1]
         questionNo = self.parameters["questionNo"][-1]
-        self.QuestionText.setText(str(questionNo)+ ". " + str(question))
+        self.QuestionText.setText(str(questionNo) + ". " + str(question))
 
         # Answers
         answer1 = self.parameters["answer1"][-1]
@@ -250,7 +324,6 @@ class QuizGame(QMainWindow):
         self.button = self.findChild(QPushButton, "NextQuestion")
         self.button.clicked.connect(self.next)
 
-
     def preload_data(self, idx):
         # idx parm: selected randomly time and again at function call
         question = self.df["question"][idx]
@@ -277,14 +350,13 @@ class QuizGame(QMainWindow):
         print(self.parameters["question"][-1])
         print(self.parameters["correct"][-1])
 
-
     def clear_parameters(self):
         # clear the global dictionary of parameters
         for parm in self.parameters:
             if self.parameters[parm] != []:
                 for i in range(0, len(self.parameters[parm])):
                     self.parameters[parm].pop()
-        #populate with initial index & score values
+        # populate with initial index & score values
         random_index = [x for x in range(7)]
         random.shuffle(random_index)
         self.parameters["index"] = random_index + self.parameters["index"]
@@ -292,7 +364,7 @@ class QuizGame(QMainWindow):
         self.parameters["questionNo"].append(1)
 
     def is_correct(self, btn):
-        #a function to evaluate wether user answer is correct
+        # a function to evaluate wether user answer is correct
         self.Option1.setEnabled(False)
         self.Option2.setEnabled(False)
         self.Option3.setEnabled(False)
@@ -305,7 +377,7 @@ class QuizGame(QMainWindow):
             print(self.parameters["index"])
             print(len(self.parameters["index"]))
 
-            if(len(self.parameters["index"]) != 0):
+            if (len(self.parameters["index"]) != 0):
                 # update score (+10 points)
                 temp_score = self.parameters["score"][-1]
                 self.parameters["score"].pop()
@@ -324,7 +396,7 @@ class QuizGame(QMainWindow):
         self.Option4.setEnabled(True)
         self.NextQuestion.setEnabled(False)
 
-        #if (len(self.parameters["index"]) > 1):
+        # if (len(self.parameters["index"]) > 1):
         if (self.parameters["questionNo"][-1] < 7):
             temp_no = self.parameters["questionNo"][-1]
             self.parameters["questionNo"].pop()
@@ -334,7 +406,8 @@ class QuizGame(QMainWindow):
             self.parameters["index"].pop()
             self.preload_data(self.parameters["index"][-1])
             self.ScoreCounter.setText(str(self.parameters["score"][-1]))
-            self.QuestionText.setText(str(self.parameters["questionNo"][-1]) + ". " + self.parameters["question"][-1])
+            self.QuestionText.setText(
+                str(self.parameters["questionNo"][-1]) + ". " + self.parameters["question"][-1])
             self.Option1.setText(self.parameters["answer1"][-1])
             self.Option2.setText(self.parameters["answer2"][-1])
             self.Option3.setText(self.parameters["answer3"][-1])
@@ -350,16 +423,17 @@ class QuizGame(QMainWindow):
             widget.setCurrentIndex(widget.currentIndex()+1)
 
 
-# Initialize the program
-app = QApplication(sys.argv)
-widget = QStackedWidget()
-mainwindow = LandingPage()
-widget.addWidget(mainwindow)
-# fixed sizing causes window to be un resizable and the values used are too big
-# widget.setFixedHeight(1000)
-# widget.setFixedWidth(1900)
-widget.show()
-try:
-    sys.exit(app.exec_())
-except:
-    print("Exiting...")
+if __name__ == '__main__':
+    # Initialize the program
+    app = QApplication(sys.argv)
+    widget = QStackedWidget()
+    mainwindow = LandingPage()
+    widget.addWidget(mainwindow)
+    # fixed sizing causes window to be un resizable and the values used are too big
+    # widget.setFixedHeight(1000)
+    # widget.setFixedWidth(1900)
+    widget.show()
+    try:
+        sys.exit(app.exec_())
+    except:
+        print("Exiting...")
