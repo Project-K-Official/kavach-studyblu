@@ -77,10 +77,12 @@ class LandingPage(QMainWindow):
         uic.loadUi("./ui/landing_page.ui", self)
 
         # Finding the button
-        # button1 -> Get Started
-        # button7 -> Exit
-        # button8 -> Share
-        # button9 -> Course_1
+        # button1  -> Get Started
+        # button7  -> Exit
+        # button8  -> Share
+        # button9  -> Course_1
+        # button10 -> Course_2
+        # button11 -> Course_3
 
         self.button1 = self.findChild(QPushButton, "pushButton")
         self.button1.clicked.connect(self.gotocp)
@@ -92,13 +94,13 @@ class LandingPage(QMainWindow):
         self.button7.clicked.connect(self.exit)
 
         self.button9 = self.findChild(QPushButton, "course_no_1")
-        self.button9.clicked.connect(self.goto_rp)
+        self.button9.clicked.connect(lambda: self.goto_rp(1))
 
         self.button10 = self.findChild(QPushButton, "course_no_2")
-        self.button10.clicked.connect(self.goto_rp)
+        self.button10.clicked.connect(lambda: self.goto_rp(2))
 
         self.button11 = self.findChild(QPushButton, "course_no_3")
-        self.button11.clicked.connect(self.goto_rp)
+        self.button11.clicked.connect(lambda: self.goto_rp(3))
 
     def share(self):
         url = QUrl("https://www.google.co.in/")
@@ -113,7 +115,7 @@ class LandingPage(QMainWindow):
         sys.exit(app.exec())
 
     def goto_rp(self, courseNumber=1):
-        screen2 = ReadingPage()
+        screen2 = ReadingPage(courseNumber)
         widget.addWidget(screen2)
         widget.setCurrentIndex(widget.currentIndex()+1)
 
@@ -160,7 +162,7 @@ class CourseInfo(QMainWindow):
         # self.button5.clicked.connect(self.share)
 
     def gotorp(self):
-        screen2 = ReadingPage()
+        screen2 = ReadingPage(1)
         widget.addWidget(screen2)
         widget.setCurrentIndex(widget.currentIndex()+1)
         # print(widget.currentIndex()+1)
@@ -191,7 +193,7 @@ class CourseInfo(QMainWindow):
 
 
 class ReadingPage(QMainWindow):
-    def __init__(self):
+    def __init__(self, courseNumber):
         super(ReadingPage, self).__init__()
         uic.loadUi("./ui/course_reading.ui", self)
 
@@ -203,18 +205,12 @@ class ReadingPage(QMainWindow):
 
         # HTML Embedding
         self.htmlV = QtWebEngineWidgets.QWebEngineView(self)
-        # self.htmlView = QtWidgets.QTextBrowser(self)
-        # Replace Label with TextBrowser
         containing_layout = self.text.parent().layout()
         containing_layout.replaceWidget(self.text, self.htmlV)
         # Loading HTML
-        # self.htmlV.setUrl(QtCore.QUrl("www.freecodecamp.org/news/learning-python-from-zero-to-hero-120ea540b567/"))
-        with open("./reading/course.html", "r", encoding="utf-8") as f:
+        with open(f"./reading/course_{courseNumber}.html", "r", encoding="utf-8") as f:
             html = f.read()
         self.htmlV.setHtml(html, QtCore.QUrl("local"))
-        # self.htmlV.setHtml( "https://www.freecodecamp.org/news/learning-python-from-zero-to-hero-120ea540b567/", QtCore.QUrl("https://www.freecodecamp.org/news/"))
-        # self.htmlView.setSource(
-        #     QtCore.QUrl.fromLocalFile("./reading/course.html"))
 
     def back(self):
         screen1 = LandingPage()
