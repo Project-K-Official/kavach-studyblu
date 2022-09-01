@@ -9,7 +9,7 @@ htmls = [
     "https://www.freecodecamp.org/news/license-to-pentest-ethical-hacking-course-for-beginners/"
 ]
 for i in range(1, len(htmls) + 1):
-    html = htmls[i]
+    html = htmls[i-1]
     course = requests.get(html)
     with open(pathlib.PurePath(dirname(getsourcefile(lambda: 0)), f"course_{i}.html"), "w", encoding="utf-8") as f:
         f.write(course.text)
