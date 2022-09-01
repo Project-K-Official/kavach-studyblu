@@ -203,10 +203,10 @@ QPushButton:pressed{
                    </size>
                   </property>
                   <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
+                   <cursorShape>ArrowCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">QPushButton
+                   <string notr="true">/*QPushButton
 {
 background-color: rgb(76, 116, 212);
 color: rgb(255, 255, 255);
@@ -223,10 +223,10 @@ QPushButton:hover{
 QPushButton:pressed{	
 	background-color: rgb(13, 44, 75);		
 	color: rgb(255, 255, 255);
-}</string>
+}*/</string>
                   </property>
                   <property name="text">
-                   <string>    Get Started  🡢     </string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -752,7 +752,7 @@ font-size:15px;</string>
                 <item>
                  <widget class="QFrame" name="frame_10">
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   <string notr="true">background-color: rgb(18, 62, 107);</string>
                   </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
@@ -769,14 +769,30 @@ font-size:15px;</string>
                        <height>60</height>
                       </size>
                      </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>18</pointsize>
+                       <bold>true</bold>
+                      </font>
+                     </property>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgb(255, 35, 39);</string>
+                      <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+color: rgb(41, 207, 250);
+}
+
+QPushButton:pressed{	
+color: rgb(145, 161, 191);
+}</string>
                      </property>
                      <property name="text">
-                      <string/>
+                      <string>Python Crash Course</string>
                      </property>
                     </widget>
                    </item>
@@ -786,7 +802,7 @@ font-size:15px;</string>
                 <item>
                  <widget class="QFrame" name="frame_8">
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   <string notr="true">background-color: rgb(18, 62, 107);</string>
                   </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
@@ -803,14 +819,31 @@ font-size:15px;</string>
                        <height>60</height>
                       </size>
                      </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>16</pointsize>
+                       <bold>true</bold>
+                      </font>
+                     </property>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgb(255, 35, 39);</string>
+                      <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+color: rgb(41, 207, 250);
+}
+
+QPushButton:pressed{	
+color: rgb(145, 161, 191);
+}</string>
                      </property>
                      <property name="text">
-                      <string/>
+                      <string>Basics of the
+ Linux Operating System</string>
                      </property>
                     </widget>
                    </item>
@@ -820,7 +853,7 @@ font-size:15px;</string>
                 <item>
                  <widget class="QFrame" name="frame_13">
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   <string notr="true">background-color: rgb(18, 62, 107);</string>
                   </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
@@ -837,14 +870,30 @@ font-size:15px;</string>
                        <height>60</height>
                       </size>
                      </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>16</pointsize>
+                       <bold>true</bold>
+                      </font>
+                     </property>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">background-color: rgb(255, 35, 39);</string>
+                      <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+color: rgb(41, 207, 250);
+}
+
+QPushButton:pressed{	
+color: rgb(145, 161, 191);
+}</string>
                      </property>
                      <property name="text">
-                      <string/>
+                      <string>Ethical Hacking Course</string>
                      </property>
                     </widget>
                    </item>
