@@ -92,7 +92,13 @@ class LandingPage(QMainWindow):
         self.button7.clicked.connect(self.exit)
 
         self.button9 = self.findChild(QPushButton, "course_no_1")
-        self.button9.clicked.connect(self.goto_course_player)
+        self.button9.clicked.connect(self.goto_rp)
+
+        self.button10 = self.findChild(QPushButton, "course_no_2")
+        self.button10.clicked.connect(self.goto_rp)
+
+        self.button11 = self.findChild(QPushButton, "course_no_3")
+        self.button11.clicked.connect(self.goto_rp)
 
     def share(self):
         url = QUrl("https://www.google.co.in/")
@@ -105,6 +111,11 @@ class LandingPage(QMainWindow):
 
     def exit(self):
         sys.exit(app.exec())
+
+    def goto_rp(self, courseNumber=1):
+        screen2 = ReadingPage()
+        widget.addWidget(screen2)
+        widget.setCurrentIndex(widget.currentIndex()+1)
 
     def goto_course_player(self):
         app = QApplication(sys.argv)
@@ -206,7 +217,7 @@ class ReadingPage(QMainWindow):
         #     QtCore.QUrl.fromLocalFile("./reading/course.html"))
 
     def back(self):
-        screen1 = CourseInfo()
+        screen1 = LandingPage()
         widget.addWidget(screen1)
         widget.setCurrentIndex(widget.currentIndex()+1)
 
