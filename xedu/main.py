@@ -189,18 +189,21 @@ class ReadingPage(QMainWindow):
 
         # Course material
         self.text = self.findChild(QLabel, "Para1")
-        # with open("./reading/file.txt") as f:
-        #     __content = f.read()
-        #     self.text.setText(__content)
 
         # HTML Embedding
-        self.htmlView = QtWidgets.QTextBrowser(self)
+        self.htmlV = QtWebEngineWidgets.QWebEngineView(self)
+        # self.htmlView = QtWidgets.QTextBrowser(self)
         # Replace Label with TextBrowser
         containing_layout = self.text.parent().layout()
-        containing_layout.replaceWidget(self.text, self.htmlView)
+        containing_layout.replaceWidget(self.text, self.htmlV)
         # Loading HTML
-        self.htmlView.setSource(
-            QtCore.QUrl.fromLocalFile("./reading/course.html"))
+        # self.htmlV.setUrl(QtCore.QUrl("www.freecodecamp.org/news/learning-python-from-zero-to-hero-120ea540b567/"))
+        with open("./reading/course.html", "r", encoding="utf-8") as f:
+            html = f.read()
+        self.htmlV.setHtml(html, QtCore.QUrl("local"))
+        # self.htmlV.setHtml( "https://www.freecodecamp.org/news/learning-python-from-zero-to-hero-120ea540b567/", QtCore.QUrl("https://www.freecodecamp.org/news/"))
+        # self.htmlView.setSource(
+        #     QtCore.QUrl.fromLocalFile("./reading/course.html"))
 
     def back(self):
         screen1 = CourseInfo()
