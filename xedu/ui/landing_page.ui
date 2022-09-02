@@ -753,7 +753,6 @@ color: rgb(145, 161, 191);
                    <string notr="true">QFrame{
 background-color: rgb(18, 62, 107);
 image: url(media/hacker.png);
-opacity:0.5;
 }</string>
                   </property>
                   <property name="frameShape">
