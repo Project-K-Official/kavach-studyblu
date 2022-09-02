@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1016</width>
-    <height>600</height>
+    <width>1344</width>
+    <height>714</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
+    <width>1200</width>
     <height>600</height>
    </size>
   </property>
@@ -63,7 +63,7 @@ border:0;</string>
          </property>
          <property name="maximumSize">
           <size>
-           <width>550</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
@@ -380,8 +380,14 @@ border-radius: 2px</string>
            <widget class="QFrame" name="frame_7">
             <property name="minimumSize">
              <size>
-              <width>200</width>
+              <width>450</width>
               <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>350</width>
+              <height>16777215</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -409,24 +415,14 @@ border-radius: 2px</string>
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
-              <spacer name="verticalSpacer">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeType">
-                <enum>QSizePolicy::Maximum</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
+             <item alignment="Qt::AlignRight|Qt::AlignBottom">
+              <widget class="QFrame" name="frame_18">
+               <property name="minimumSize">
                 <size>
-                 <width>20</width>
-                 <height>100</height>
+                 <width>400</width>
+                 <height>500</height>
                 </size>
                </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QFrame" name="frame_18">
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -445,7 +441,7 @@ border:0;</string>
                </property>
               </widget>
              </item>
-             <item>
+             <item alignment="Qt::AlignBottom">
               <widget class="QFrame" name="frame_17">
                <property name="minimumSize">
                 <size>
@@ -472,15 +468,21 @@ border:0;</string>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QGridLayout" name="gridLayout_4">
+               <layout class="QVBoxLayout" name="verticalLayout_8">
                 <property name="topMargin">
                  <number>45</number>
                 </property>
                 <property name="bottomMargin">
                  <number>20</number>
                 </property>
-                <item row="0" column="0">
+                <item alignment="Qt::AlignHCenter">
                  <widget class="QFrame" name="frame_19">
+                  <property name="minimumSize">
+                   <size>
+                    <width>100</width>
+                    <height>100</height>
+                   </size>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">border:0;
 image: url(media/Kavach_logo.png);</string>
@@ -491,7 +493,39 @@ image: url(media/Kavach_logo.png);</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_10"/>
+                  <layout class="QHBoxLayout" name="horizontalLayout_10">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                  </layout>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                 <widget class="QLabel" name="label_5">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(18, 62, 107);</string>
+                  </property>
+                  <property name="text">
+                   <string>StudyBlu powered by KAVACH OS</string>
+                  </property>
                  </widget>
                 </item>
                </layout>
@@ -529,8 +563,8 @@ image: url(media/Kavach_logo.png);</string>
               <widget class="QFrame" name="frame_16">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>0</height>
+                 <width>300</width>
+                 <height>700</height>
                 </size>
                </property>
                <property name="maximumSize">
@@ -562,12 +596,18 @@ border:0;</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                  <layout class="QVBoxLayout" name="verticalLayout_5">
                    <property name="bottomMargin">
                     <number>35</number>
                    </property>
-                   <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+                   <item>
                     <widget class="QLabel" name="label_3">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>40</height>
+                      </size>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">color:rgb(255,255,255);
  font-weight:bold;
@@ -578,28 +618,12 @@ font-size:30px;</string>
                      </property>
                     </widget>
                    </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_10">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(18, 62, 107);
-image: url(media/python.png);</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_8">
                    <item>
                     <widget class="QPushButton" name="course_no_1">
                      <property name="minimumSize">
                       <size>
                        <width>200</width>
-                       <height>60</height>
+                       <height>120</height>
                       </size>
                      </property>
                      <property name="font">
@@ -614,11 +638,12 @@ image: url(media/python.png);</string>
                      <property name="styleSheet">
                       <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
-background:transparent;
-image:None;
+background-color: rgb(18, 62, 107);
+image: url(media/python.png);
 }
 
 QPushButton:hover{
+image: url(media/python_1.png);
 color: rgb(41, 207, 250);
 }
 
@@ -627,32 +652,16 @@ color: rgb(145, 161, 191);
 }</string>
                      </property>
                      <property name="text">
-                      <string>Python Crash Course</string>
+                      <string>  Python Crash Course  </string>
                      </property>
                     </widget>
                    </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_8">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(18, 62, 107);
-image: url(media/linux.png);</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_6">
                    <item>
                     <widget class="QPushButton" name="course_no_2">
                      <property name="minimumSize">
                       <size>
                        <width>200</width>
-                       <height>60</height>
+                       <height>120</height>
                       </size>
                      </property>
                      <property name="font">
@@ -667,12 +676,13 @@ image: url(media/linux.png);</string>
                      <property name="styleSheet">
                       <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
-background:transparent;
-image:None;
+background-color: rgb(18, 62, 107);
+image: url(media/linux.png);
 }
 
 QPushButton:hover{
 color: rgb(41, 207, 250);
+image: url(media/linux_1.png);
 }
 
 QPushButton:pressed{	
@@ -680,39 +690,17 @@ color: rgb(145, 161, 191);
 }</string>
                      </property>
                      <property name="text">
-                      <string>Basics of the
- Linux Operating System</string>
+                      <string>  Basics of the
+ Linux Operating System  </string>
                      </property>
                     </widget>
                    </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_20">
-                  <property name="minimumSize">
-                   <size>
-                    <width>200</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(18, 62, 107);
-image: url(media/shield.png);</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_9">
                    <item>
                     <widget class="QPushButton" name="course_no_3">
                      <property name="minimumSize">
                       <size>
                        <width>200</width>
-                       <height>60</height>
+                       <height>120</height>
                       </size>
                      </property>
                      <property name="font">
@@ -727,11 +715,12 @@ image: url(media/shield.png);</string>
                      <property name="styleSheet">
                       <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
-background:transparent;
-image:None;
+background-color: rgb(18, 62, 107);
+image: url(media/shield.png);
 }
 
 QPushButton:hover{
+image: url(media/shield_1.png);
 color: rgb(41, 207, 250);
 }
 
@@ -740,34 +729,16 @@ color: rgb(145, 161, 191);
 }</string>
                      </property>
                      <property name="text">
-                      <string>Personal Digital Security</string>
+                      <string>  Personal Digital Security  </string>
                      </property>
                     </widget>
                    </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_13">
-                  <property name="styleSheet">
-                   <string notr="true">QFrame{
-background-color: rgb(18, 62, 107);
-image: url(media/hacker.png);
-}</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_7">
                    <item>
                     <widget class="QPushButton" name="course_no_4">
                      <property name="minimumSize">
                       <size>
-                       <width>200</width>
-                       <height>60</height>
+                       <width>250</width>
+                       <height>120</height>
                       </size>
                      </property>
                      <property name="font">
@@ -782,11 +753,12 @@ image: url(media/hacker.png);
                      <property name="styleSheet">
                       <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
-background:transparent;
-image:None;
+background-color: rgb(18, 62, 107);
+image: url(media/hacker.png);
 }
 
 QPushButton:hover{
+image: url(media/hacker_1.png);
 color: rgb(41, 207, 250);
 }
 
@@ -796,6 +768,24 @@ color: rgb(145, 161, 191);
                      </property>
                      <property name="text">
                       <string>Ethical Hacking Course</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item alignment="Qt::AlignRight">
+                    <widget class="QLabel" name="label_4">
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color:rgb(255,255,255);
+ font-weight:bold;
+font-size:15px;</string>
+                     </property>
+                     <property name="text">
+                      <string>More courses coming soon...</string>
                      </property>
                     </widget>
                    </item>
