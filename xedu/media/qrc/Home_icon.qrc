@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="studyblu_logo">
-    <file>../mascot.svg</file>
-    <file>edit.png</file>
-    <file>image1.qrc</file>
-    <file>../studyblu_logo.png</file>
-  </qresource>
-</RCC>

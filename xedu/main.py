@@ -25,57 +25,12 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView, QWebEnginePage
 # *********************************************
 
 
-class Course_Player (QMainWindow):
-
-    def __init__(self, *args, **kwargs):
-        super(Course_Player, self).__init__(*args, **kwargs)
-
-        self.setWindowTitle("Course Player")
-        self.setFixedWidth(1920)
-        self.setFixedHeight(1080)
-
-        label = QLabel("")
-
-        # The `Qt` namespace has a lot of attributes to customise
-        # widgets. See: http://doc.qt.io/qt-5/qt.html
-        label.setAlignment(Qt.AlignCenter)
-
-        # Set the central widget of the Window. Widget will expand
-        # to take up all the space in the window by default.
-        self.setCentralWidget(label)
-
-        # Code for 1 Youtube video and its QtWidget
-        # ======================================================================================
-
-        self.centralwid = QtWidgets.QWidget(self)
-        self.centralwid.setGeometry(QtCore.QRect(0, 0, 1920, 1080))
-        self.centralwid.setObjectName("centralwid")
-        self.label_loading_browsers = QtWidgets.QLabel(self.centralwid)
-        # ===================== HERE IS THE CODE FOR IFRAM YOUTUBE ============================
-        self.vlayout = QtWidgets.QVBoxLayout()
-        self.webview = QtWebEngineWidgets.QWebEngineView()
-        self.webview.settings().setAttribute(
-            QWebEngineSettings.FullScreenSupportEnabled, True)
-        self.webview.settings().setAttribute(
-            QWebEngineSettings.LocalContentCanAccessRemoteUrls, True)
-        self.webview.settings().setAttribute(
-            QWebEngineSettings.AllowRunningInsecureContent, True)
-        self.webview.page().fullScreenRequested.connect(lambda request: request.accept())
-        baseUrl = "local"
-        htmlString = """
-                        <iframe width="1900" height="950" src="https://www.youtube.com/embed/g8NVwN0_mks?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                                """
-
-        self.webview.setHtml(htmlString, QUrl(baseUrl))
-        self.vlayout.addWidget(self.webview)
-        self.centralwid.setLayout(self.vlayout)
-
-
 class LandingPage(QMainWindow):
     def __init__(self):
         super(LandingPage, self).__init__()
         uic.loadUi("./ui/landing_page.ui", self)
 
+        self.setWindowTitle("StudyBlu")
         # Finding the button
         # button1  -> Get Started
         # button7  -> Exit
@@ -90,8 +45,8 @@ class LandingPage(QMainWindow):
         self.button8 = self.findChild(QPushButton, "pushButton_8")
         self.button8.clicked.connect(self.share)
 
-        self.button7 = self.findChild(QPushButton, "pushButton_7")
-        self.button7.clicked.connect(self.exit)
+        # self.button7 = self.findChild(QPushButton, "pushButton_7")
+        # self.button7.clicked.connect(self.exit)
 
         self.button9 = self.findChild(QPushButton, "course_no_1")
         self.button9.clicked.connect(lambda: self.goto_rp(1))
@@ -118,12 +73,6 @@ class LandingPage(QMainWindow):
         screen2 = ReadingPage(courseNumber)
         widget.addWidget(screen2)
         widget.setCurrentIndex(widget.currentIndex()+1)
-
-    def goto_course_player(self):
-        app = QApplication(sys.argv)
-        window = Course_Player()
-        window.show()
-        app.exec_()
 
 # *********************************************
 #                  FRAME 2
