@@ -84,8 +84,8 @@ class LandingPage(QMainWindow):
         # button10 -> Course_2
         # button11 -> Course_3
 
-        self.button1 = self.findChild(QPushButton, "pushButton")
-        self.button1.clicked.connect(self.gotocp)
+        # self.button1 = self.findChild(QPushButton, "pushButton")
+        # self.button1.clicked.connect(self.gotocp)
 
         self.button8 = self.findChild(QPushButton, "pushButton_8")
         self.button8.clicked.connect(self.share)
@@ -103,7 +103,7 @@ class LandingPage(QMainWindow):
         self.button11.clicked.connect(lambda: self.goto_rp(3))
 
     def share(self):
-        url = QUrl("https://www.google.co.in/")
+        url = QUrl("https://www.kavach.org.in/")
         QDesktopServices.openUrl(url)
 
     def gotocp(self):
