@@ -38,34 +38,15 @@ class LandingPage(QMainWindow):
         # button10 -> Course_2
         # button11 -> Course_3
 
-<<<<<<< Updated upstream
-        # self.button1 = self.findChild(QPushButton, "pushButton")
-        # self.button1.clicked.connect(self.gotocp)
-=======
         self.shareButton = self.findChild(QPushButton, "pushButton_8")
         self.shareButton.clicked.connect(self.share)
->>>>>>> Stashed changes
 
-        self.backButton = self.findChild(QPushButton, "pushButton_7")
-        self.backButton.clicked.connect(self.exit)
+        # self.backButton = self.findChild(QPushButton, "pushButton_7")
+        # self.backButton.clicked.connect(self.exit)
 
-<<<<<<< Updated upstream
-        # self.button7 = self.findChild(QPushButton, "pushButton_7")
-        # self.button7.clicked.connect(self.exit)
-
-        self.button9 = self.findChild(QPushButton, "course_no_1")
-        self.button9.clicked.connect(lambda: self.goto_rp(1))
-
-        self.button10 = self.findChild(QPushButton, "course_no_2")
-        self.button10.clicked.connect(lambda: self.goto_rp(2))
-
-        self.button11 = self.findChild(QPushButton, "course_no_3")
-        self.button11.clicked.connect(lambda: self.goto_rp(3))
-=======
         for i in range(1, 4):
             self.findChild(QPushButton, f"course_no_{i}")\
                 .clicked.connect(lambda: self.goto_rp(i))
->>>>>>> Stashed changes
 
     def share(self):
         url = QUrl("https://www.kavach.org.in/")
