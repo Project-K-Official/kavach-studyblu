@@ -32,7 +32,6 @@ class LandingPage(QMainWindow):
 
         self.setWindowTitle("StudyBlu")
         # Finding the button
-        # button7  -> Exit
         # button8  -> Share
         # button9  -> Course_1
         # button10 -> Course_2
@@ -41,19 +40,18 @@ class LandingPage(QMainWindow):
         self.shareButton = self.findChild(QPushButton, "pushButton_8")
         self.shareButton.clicked.connect(self.share)
 
-        # self.backButton = self.findChild(QPushButton, "pushButton_7")
-        # self.backButton.clicked.connect(self.exit)
-
-        for i in range(1, 4):
-            self.findChild(QPushButton, f"course_no_{i}")\
-                .clicked.connect(lambda: self.goto_rp(i))
+        self.findChild(QPushButton, f"course_no_1").clicked.connect(
+            lambda: self.goto_rp(1))
+        self.findChild(QPushButton, f"course_no_2").clicked.connect(
+            lambda: self.goto_rp(2))
+        self.findChild(QPushButton, f"course_no_3").clicked.connect(
+            lambda: self.goto_rp(3))
+        self.findChild(QPushButton, f"course_no_4").clicked.connect(
+            lambda: self.goto_rp(4))
 
     def share(self):
         url = QUrl("https://www.kavach.org.in/")
         QDesktopServices.openUrl(url)
-
-    def exit(self):
-        sys.exit(app.exec())
 
     def goto_rp(self, courseNumber=1):
         screen2 = ReadingPage(courseNumber)
