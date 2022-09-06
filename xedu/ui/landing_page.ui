@@ -147,39 +147,36 @@ border:0;</string>
                 <property name="leftMargin">
                  <number>15</number>
                 </property>
-                <item row="2" column="0" alignment="Qt::AlignLeft">
-                 <widget class="QPushButton" name="pushButton">
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_2">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
-                    <height>40</height>
+                    <height>80</height>
                    </size>
                   </property>
-                  <property name="cursor">
-                   <cursorShape>ArrowCursor</cursorShape>
+                  <property name="maximumSize">
+                   <size>
+                    <width>350</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI</family>
+                    <pointsize>12</pointsize>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">/*QPushButton
-{
-background-color: rgb(76, 116, 212);
-color: rgb(255, 255, 255);
-font-size: 15px;
-font-weight: bold;
-border-radius: 8px;
-}
-
-QPushButton:hover{
-	background-color: rgb(18, 62, 107);
-	color:rgb(255, 255, 255);
-}
-
-QPushButton:pressed{	
-	background-color: rgb(13, 44, 75);		
-	color: rgb(255, 255, 255);
-}*/</string>
+                   <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
                   </property>
                   <property name="text">
-                   <string/>
+                   <string>Join our program and master new skills. Classes that are centered on concepts to help you be more innovative and mindful.</string>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>
@@ -205,31 +202,6 @@ border-radius: 2px</string>
                   </property>
                   <property name="text">
                    <string>Today is yours to take</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="label_2">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>80</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>350</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">font-size: 13px;</string>
-                  </property>
-                  <property name="text">
-                   <string>Join our program and master new skills. Classes that are centered on concepts to help you be more innovative and mindful.</string>
-                  </property>
-                  <property name="wordWrap">
-                   <bool>true</bool>
                   </property>
                  </widget>
                 </item>
@@ -524,7 +496,7 @@ image: url(media/Kavach_logo.png);</string>
                    <string notr="true">color: rgb(18, 62, 107);</string>
                   </property>
                   <property name="text">
-                   <string>StudyBlu powered by KAVACH OS</string>
+                   <string>StudyBlu powered by VITyarthi</string>
                   </property>
                  </widget>
                 </item>
