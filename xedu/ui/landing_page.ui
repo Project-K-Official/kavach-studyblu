@@ -414,7 +414,29 @@ border:0;</string>
                </property>
               </widget>
              </item>
-             <item alignment="Qt::AlignBottom">
+             <item alignment="Qt::AlignHCenter|Qt::AlignBottom">
+              <widget class="QLabel" name="label_5">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(18, 62, 107);</string>
+               </property>
+               <property name="text">
+                <string> powered by </string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignTop">
               <widget class="QFrame" name="frame_17">
                <property name="minimumSize">
                 <size>
@@ -432,8 +454,8 @@ border:0;</string>
                 <bool>false</bool>
                </property>
                <property name="styleSheet">
-                <string notr="true">/*background-color: rgb(255, 255, 255);*/
-border:0;</string>
+                <string notr="true">border:0;
+image: url(media/vityarthi.png);</string>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -448,59 +470,6 @@ border:0;</string>
                 <property name="bottomMargin">
                  <number>20</number>
                 </property>
-                <item alignment="Qt::AlignHCenter">
-                 <widget class="QFrame" name="frame_19">
-                  <property name="minimumSize">
-                   <size>
-                    <width>100</width>
-                    <height>100</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">border:0;
-image: url(media/Kavach_logo.png);</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_10">
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                  </layout>
-                 </widget>
-                </item>
-                <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-                 <widget class="QLabel" name="label_5">
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>50</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color: rgb(18, 62, 107);</string>
-                  </property>
-                  <property name="text">
-                   <string>StudyBlu powered by VITyarthi</string>
-                  </property>
-                 </widget>
-                </item>
                </layout>
               </widget>
              </item>
