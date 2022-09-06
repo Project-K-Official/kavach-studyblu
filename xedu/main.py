@@ -95,6 +95,7 @@ if __name__ == '__main__':
     mainwindow = LandingPage()
     widget.addWidget(mainwindow)
     widget.setWindowTitle("StudyBlu - KavachOS")
+    widget.setWindowIcon(QtGui.QIcon("./media/Kavach_logo.png"))
     widget.setFixedSize(1344, 714)
     # fixed sizing causes window to be un resizable and the values used are too big
     # widget.setFixedHeight(1000)
