@@ -1,78 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>1033</width>
-    <height>633</height>
-   </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">border-radius:20px;
-border:None;
-background-color:rgb(255,255,255);</string>
-  </property>
-  <property name="documentMode">
-   <bool>false</bool>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QScrollArea" name="ContentTable">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="MinimumExpanding">
+  <class>MainWindow</class>
+  <widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1033</width>
+        <height>633</height>
+      </rect>
+    </property>
+    <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color : #4c74d4;
-border-radius:15px;</string>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents_3">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>100</width>
-         <height>58</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
+      </sizepolicy>
+    </property>
+    <property name="windowTitle">
+      <string>MainWindow</string>
+    </property>
+    <property name="styleSheet">
+      <string notr="true">border-radius:20px;
+border:None;
+background-color:rgb(255,255,255);</string>
+    </property>
+    <property name="documentMode">
+      <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QPushButton" name="pushButton">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton
+          <widget class="QScrollArea" name="ContentTable">
+            <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="MinimumExpanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+              </sizepolicy>
+            </property>
+            <property name="styleSheet">
+              <string notr="true">background-color : #4c74d4;
+border-radius:15px;</string>
+            </property>
+            <property name="widgetResizable">
+              <bool>true</bool>
+            </property>
+            <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+                <widget class="QPushButton" name="pushButton">
+                  <property name="minimumSize">
+                    <size>
+                      <width>0</width>
+                      <height>40</height>
+                    </size>
+                  </property>
+                  <property name="styleSheet">
+                    <string notr="true">QPushButton
 {
 border: 2px solid ;
 background-color: rgb(17,36,68);
@@ -91,47 +76,46 @@ QPushButton:pressed{
 	background-color:rgb(255, 255, 255);		
 	color: rgb(17, 36, 68);
 }</string>
-          </property>
-          <property name="text">
-           <string>   Back   </string>
-          </property>
-         </widget>
+                  </property>
+                  <property name="text">
+                    <string>   Back   </string>
+                  </property>
+                </widget>
+              </item>
+            </layout>
+          </widget>
         </item>
-       </layout>
-      </widget>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="Para1">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Ignored" vsizetype="MinimumExpanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(93, 93, 93);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-   </layout>
+        <item>
+          <widget class="QLabel" name="Para1">
+            <property name="sizePolicy">
+              <sizepolicy hsizetype="Ignored" vsizetype="MinimumExpanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+              </sizepolicy>
+            </property>
+            <property name="font">
+              <font>
+                <pointsize>12</pointsize>
+                <bold>false</bold>
+              </font>
+            </property>
+            <property name="styleSheet">
+              <string notr="true">color: rgb(93, 93, 93);</string>
+            </property>
+            <property name="text">
+              <string/>
+            </property>
+            <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+            <property name="wordWrap">
+              <bool>true</bool>
+            </property>
+          </widget>
+        </item>
+      </layout>
+    </widget>
   </widget>
- </widget>
- <resources/>
- <connections/>
+  <resources/>
+  <connections/>
 </ui>
