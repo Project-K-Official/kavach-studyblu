@@ -195,7 +195,8 @@ border-radius: 2px</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">font: 14pt &quot;Corbel&quot;;</string>
+                   <string notr="true">color:rgb(0, 0, 0);
+font: 14pt &quot;Corbel&quot;;</string>
                   </property>
                   <property name="text">
                    <string>Join our program and master new skills. Classes that are centered on concepts to help you be more innovative and mindful.</string>
