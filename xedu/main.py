@@ -80,7 +80,7 @@ class ReadingPage(QMainWindow):
         # Loading HTML
         with open(f"./reading/course_{courseNumber}.html", "r", encoding="utf-8") as f:
             html = f.read()
-        self.htmlV.setHtml(html, QtCore.QUrl("local"))
+        self.htmlV.setHtml(html, QtCore.QUrl("https://www.freecodecamp.org"))
 
     def back(self):
         screen1 = LandingPage()
