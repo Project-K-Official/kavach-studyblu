@@ -2,6 +2,7 @@ from inspect import getsourcefile
 from os.path import dirname
 import pathlib
 import requests
+import re
 
 htmls = [
     "https://www.freecodecamp.org/news/free-python-crash-course/",
@@ -13,4 +14,5 @@ for i in range(1, len(htmls) + 1):
     html = htmls[i-1]
     course = requests.get(html)
     with open(pathlib.PurePath(dirname(getsourcefile(lambda: 0)), f"course_{i}.html"), "w", encoding="utf-8") as f:
-        f.write(course.text)
+        f.write(
+            re.sub(r'<div class="ad(\s|.)*?ADVERTISEMENT(\s|.)*?div>', "", course.text))
