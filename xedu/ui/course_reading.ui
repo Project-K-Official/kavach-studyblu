@@ -52,7 +52,7 @@ background-color: #FFFFFF;</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>770</width>
+         <width>915</width>
          <height>615</height>
         </rect>
        </property>
@@ -80,81 +80,6 @@ background-color: #FFFFFF;</string>
          </spacer>
         </item>
         <item>
-         <widget class="QLabel" name="Title">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>20</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string> BASICS OF PROGRAMMING</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QGroupBox" name="EstimatedTime">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: none;</string>
-          </property>
-          <property name="title">
-           <string/>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QLabel" name="EstimatedTimeHeading">
-             <property name="font">
-              <font>
-               <pointsize>12</pointsize>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Estd. Reading Time: </string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="EstimatedTimeTime">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>12</pointsize>
-               <bold>false</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>13min 32sec</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item>
          <widget class="QScrollArea" name="scrollArea">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -176,8 +101,8 @@ background-color: #FFFFFF;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>752</width>
-             <height>483</height>
+             <width>897</width>
+             <height>571</height>
             </rect>
            </property>
            <property name="sizePolicy">
@@ -187,34 +112,6 @@ background-color: #FFFFFF;</string>
             </sizepolicy>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_2">
-            <item>
-             <widget class="QLabel" name="SubHeding1">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>12</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(93, 93, 93);</string>
-              </property>
-              <property name="text">
-               <string>The Standard Lorem Ipsum passage</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-              </property>
-              <property name="wordWrap">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
             <item>
              <widget class="QLabel" name="Para1">
               <property name="sizePolicy">
@@ -276,7 +173,7 @@ border-radius:15px;</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>245</width>
+         <width>100</width>
          <height>58</height>
         </rect>
        </property>
