@@ -30,7 +30,6 @@ class LandingPage(QMainWindow):
         super(LandingPage, self).__init__()
         uic.loadUi("./ui/landing_page.ui", self)
 
-        self.setWindowTitle("StudyBlu")
         # Finding the button
         # button8  -> Share
         # button9  -> Course_1
@@ -95,6 +94,8 @@ if __name__ == '__main__':
     widget = QStackedWidget()
     mainwindow = LandingPage()
     widget.addWidget(mainwindow)
+    widget.setWindowTitle("StudyBlu - KavachOS")
+    widget.setFixedSize(1344, 714)
     # fixed sizing causes window to be un resizable and the values used are too big
     # widget.setFixedHeight(1000)
     # widget.setFixedWidth(1900)
