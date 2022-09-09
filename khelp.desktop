@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Kavach StudyBlu
+Exec=python3 /usr/bin/kavach-StudyBlu
+Icon=kavach
