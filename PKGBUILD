@@ -13,8 +13,8 @@ sha256sums=('SKIP')
 package() {
         install -d  ${pkgdir}/usr/share/kavach-xedu
         install -d  ${pkgdir}/usr/share/applications
-        install -d ${pkgdir}/usr/bin/xedu/
-        install -d ${pkgdir}/etc/skel/.config/autostart
+        install -d  ${pkgdir}/usr/bin/xedu
+        install -d  ${pkgdir}/etc/skel/.config/autostart
 
 	cp -r  ${srcdir}/kavach-studyblu/xedu/* "${pkgdir}/usr/bin/xedu/"
 	cp -r ${srcdir}/kavach-studyblu/xedu/main.py "${pkgdir}/usr/bin/xedu/kavach-xedu"	
