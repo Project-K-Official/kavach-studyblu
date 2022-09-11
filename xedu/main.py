@@ -28,7 +28,7 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView, QWebEnginePage
 class LandingPage(QMainWindow):
     def __init__(self):
         super(LandingPage, self).__init__()
-        uic.loadUi("./ui/landing_page.ui", self)
+        uic.loadUi("/usr/local/bin/kavach-xedu/ui/landing_page.ui", self)
 
         # Finding the button
         # button8  -> Share
@@ -65,7 +65,7 @@ class LandingPage(QMainWindow):
 class ReadingPage(QMainWindow):
     def __init__(self, courseNumber):
         super(ReadingPage, self).__init__()
-        uic.loadUi("./ui/course_reading.ui", self)
+        uic.loadUi("/usr/local/bin/kavach-xedu/ui/course_reading.ui", self)
 
         self.button = self.findChild(QPushButton, "pushButton")
         self.button.clicked.connect(self.back)
@@ -95,7 +95,7 @@ if __name__ == '__main__':
     mainwindow = LandingPage()
     widget.addWidget(mainwindow)
     widget.setWindowTitle("StudyBlu - KavachOS")
-    widget.setWindowIcon(QtGui.QIcon("./media/Kavach_logo.png"))
+    widget.setWindowIcon(QtGui.QIcon("/usr/local/bin/kavach-xedu/media/Kavach_logo.png"))
     widget.setFixedSize(1344, 714)
     # fixed sizing causes window to be un resizable and the values used are too big
     # widget.setFixedHeight(1000)
