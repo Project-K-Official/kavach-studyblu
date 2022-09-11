@@ -123,7 +123,7 @@ border:0;</string>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">image: url(media/studyblu_logo.png);
+                <string notr="true">image: url(/usr/local/bin/kavach-xedu/media/studyblu_logo.png);
 border:0;</string>
                </property>
                <property name="frameShape">
@@ -403,7 +403,7 @@ border-radius: 2px</string>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">image: url(media/mascot.svg);
+                <string notr="true">image: url(/usr/local/bin/kavach-xedu/media/mascot.svg);
 border:0;</string>
                </property>
                <property name="frameShape">
@@ -455,7 +455,7 @@ border:0;</string>
                </property>
                <property name="styleSheet">
                 <string notr="true">border:0;
-image: url(media/vityarthi.png);</string>
+image: url(/usr/local/bin/kavach-xedu/media/vityarthi.png);</string>
                </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -581,11 +581,11 @@ font-size:30px;</string>
                       <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 background-color: rgb(18, 62, 107);
-image: url(media/python.png);
+image: url(/usr/local/bin/kavach-xedu/media/python.png);
 }
 
 QPushButton:hover{
-image: url(media/python_1.png);
+image: url(/usr/local/bin/kavach-xedu/media/python_1.png);
 color: rgb(41, 207, 250);
 }
 
@@ -619,12 +619,12 @@ color: rgb(145, 161, 191);
                       <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 background-color: rgb(18, 62, 107);
-image: url(media/linux.png);
+image: url(/usr/local/bin/kavach-xedu/media/linux.png);
 }
 
 QPushButton:hover{
 color: rgb(41, 207, 250);
-image: url(media/linux_1.png);
+image: url(/usr/local/bin/kavach-xedu/media/linux_1.png);
 }
 
 QPushButton:pressed{	
@@ -658,11 +658,11 @@ color: rgb(145, 161, 191);
                       <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 background-color: rgb(18, 62, 107);
-image: url(media/shield.png);
+image: url(/usr/local/bin/kavach-xedu/media/shield.png);
 }
 
 QPushButton:hover{
-image: url(media/shield_1.png);
+image: url(/usr/local/bin/kavach-xedu/media/shield_1.png);
 color: rgb(41, 207, 250);
 }
 
@@ -696,11 +696,11 @@ color: rgb(145, 161, 191);
                       <string notr="true">QPushButton{
 color: rgb(255, 255, 255);
 background-color: rgb(18, 62, 107);
-image: url(media/hacker.png);
+image: url(/usr/local/bin/kavach-xedu/media/hacker.png);
 }
 
 QPushButton:hover{
-image: url(media/hacker_1.png);
+image: url(/usr/local/bin/kavach-xedu/media/hacker_1.png);
 color: rgb(41, 207, 250);
 }
 
@@ -750,7 +750,7 @@ font-size:15px;</string>
   </widget>
  </widget>
  <resources>
-  <include location="../media/qrc/Home_icon.qrc"/>
+  <include location="/usr/local/bin/kavach-xedu/media/qrc/Home_icon.qrc"/>
  </resources>
  <connections/>
 </ui>
