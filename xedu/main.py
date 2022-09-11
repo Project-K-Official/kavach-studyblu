@@ -78,7 +78,7 @@ class ReadingPage(QMainWindow):
         containing_layout = self.text.parent().layout()
         containing_layout.replaceWidget(self.text, self.htmlV)
         # Loading HTML
-        with open(f"./reading/course_{courseNumber}.html", "r", encoding="utf-8") as f:
+        with open(f"/usr/local/bin/kavach-xedu/reading/course_{courseNumber}.html", "r", encoding="utf-8") as f:
             html = f.read()
         self.htmlV.setHtml(html, QtCore.QUrl("https://www.freecodecamp.org"))
 
